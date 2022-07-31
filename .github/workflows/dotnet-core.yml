@@ -21,12 +21,12 @@ jobs:
       ##Builds
       ##Builds
       - name: Install dependencies Api
-        run: dotnet restore Api/Api
+        run: dotnet restore Api
       - name: Build
-        run:  dotnet build --configuration Release --no-restore Api/Api
+        run:  dotnet build --configuration Release --no-restore Api
 
       ##Tests
       - name: Test Api List
-        run: dotnet test UnitTests/UnitTests -t
+        run: dotnet test UnitTests -t
       - name: Test Api
-        run: dotnet test UnitTests/UnitTests  --no-restore --verbosity n  -l "console;verbosity=detailed"
+        run: dotnet test UnitTests  --no-restore --verbosity n  -l "console;verbosity=detailed"
